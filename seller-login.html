@@ -18,6 +18,15 @@
         <label>Password</label>
         <input type="password" name="password" required />
 
+        <p style="margin-top:8px"><a href="#" id="forgotToggle">Forgot password?</a></p>
+
+        <form id="sellerForgotForm" style="display:none;margin-top:8px;"> 
+          <label>Enter your email to reset password</label>
+          <input type="email" name="email" required />
+          <div style="margin-top:8px;display:flex;gap:8px;"><button type="submit" class="secondary-btn">Send reset link</button><button type="button" id="forgotCancel" class="secondary-btn">Cancel</button></div>
+        </form>
+        <p id="sellerForgotMsg" class="muted" style="margin-top:8px;"></p>
+
         <div style="margin-top:18px;display:flex;gap:12px;">
           <button class="primary-btn" type="submit">Log in</button>
           <a href="seller-signup.html" class="secondary-btn">Create account</a>

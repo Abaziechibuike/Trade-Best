@@ -70,3 +70,27 @@ if(document.getElementById('loginForm')){
     disableButton(submitBtn, false);
   });
 }
+
+// Seller forgot password flow
+if(document.getElementById('forgotToggle')){
+  const toggle = document.getElementById('forgotToggle');
+  const form = document.getElementById('sellerForgotForm');
+  const cancel = document.getElementById('forgotCancel');
+  toggle.addEventListener('click', (e)=>{ e.preventDefault(); if(form) form.style.display = form.style.display === 'none' ? 'block' : 'none'; });
+  if(cancel) cancel.addEventListener('click', ()=>{ if(form) form.style.display = 'none'; });
+  if(form){
+    form.addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      const btn = form.querySelector('button[type=submit]') || form.querySelector('button');
+      disableButton(btn, true);
+      const fd = new FormData(form);
+      const body = Object.fromEntries(fd.entries());
+        const res = await postJSON('/api/seller/password-reset', body);
+        const msgEl = document.getElementById('sellerForgotMsg') || document.getElementById('msg');
+        if (msgEl) msgEl.textContent = res.message || '';
+        showToast(res.message || (res.ok ? 'Check your email for reset link' : 'Could not send reset'));
+        if (res.ok && form) form.style.display = 'none';
+      disableButton(btn, false);
+    });
+  }
+}
