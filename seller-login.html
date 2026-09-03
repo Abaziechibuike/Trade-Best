@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Seller Login — TRADE BEST</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container" style="padding:48px 0;">
+    <a href="index.html" style="display:inline-block;margin-bottom:18px;color:var(--primary-dark);">← Back to home</a>
+    <div style="max-width:480px;margin:auto;background:var(--surface);padding:28px;border-radius:12px;box-shadow:var(--shadow);">
+      <h1>Seller login</h1>
+      <form id="loginForm">
+        <label>Email</label>
+        <input type="email" name="email" required />
+
+        <label>Password</label>
+        <input type="password" name="password" required />
+
+        <div style="margin-top:18px;display:flex;gap:12px;">
+          <button class="primary-btn" type="submit">Log in</button>
+          <a href="seller-signup.html" class="secondary-btn">Create account</a>
+        </div>
+      </form>
+      <p id="msg" style="margin-top:12px;color:var(--muted);"></p>
+    </div>
+  </main>
+
+  <script src="assets/js/auth.js"></script>
+</body>
+</html>

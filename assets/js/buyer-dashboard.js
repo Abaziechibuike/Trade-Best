@@ -1,0 +1,1 @@
+async function init(){const data=await fetch('/api/auth/me').then(r=>r.json());if(!data.user||data.user.role!=='buyer')return location='buyer-login.html';buyerName.textContent=data.user.fullName||'My account'}logout.addEventListener('click',async()=>{await fetch('/api/auth/logout',{method:'POST'});location='/'});init();

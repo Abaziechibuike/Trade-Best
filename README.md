@@ -33,7 +33,4 @@ Future improvements (after MVP)
 Technical approach (starter)
 -- Web app (responsive) with a lightweight backend and a simple database. Start with a single-page listing flow and expand iteratively.
 
-Next steps
--- Turn this README into a product brief, sketch the user flow, and list prioritized issues for an initial sprint.
 
-If you'd like, I can: (1) create a concise feature backlog, (2) draft a one-page product brief, or (3) add issue templates to start development. Which would you like next?
